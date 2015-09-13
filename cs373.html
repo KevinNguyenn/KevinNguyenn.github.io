@@ -5,9 +5,10 @@ permalink: /cs373/
 
 <div class="posts">
   {% for post in site.posts %}
-    <p>{{site.swe-name}}</p>
+    <!-- <p>{{site.swe-name}}</p> -->
+    {% if post.title contains "CS 373" %}
     <article class="post">
-      {% if post.title contains "CS 373" %}
+      <!-- {% if post.title contains "CS 373" %} -->
       <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
 
       <div class="entry">
@@ -15,7 +16,7 @@ permalink: /cs373/
       </div>
 
       <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-      {% endif %}
     </article>
+    {% endif %}
   {% endfor %}
 </div>
